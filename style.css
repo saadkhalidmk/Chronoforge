@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #fdfdfd;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+#timer {
+  font-size: 4rem;
+  margin: 20px 0;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #f4f4f4;
+}
+
