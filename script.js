@@ -8,13 +8,12 @@ const countEl = document.getElementById('count');
 const startBtn = document.getElementById('start');
 const resetBtn = document.getElementById('reset');
 const themeToggle = document.getElementById('theme-toggle');
+const resetPomosBtn = document.getElementById('reset-pomos');
 
 function updateDisplay() {
   let minutes = Math.floor(timeLeft / 60);
   let seconds = timeLeft % 60;
-  timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds
-    .toString()
-    .padStart(2, '0')}`;
+  timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 function startTimer() {
@@ -36,6 +35,7 @@ function startTimer() {
   }, 1000);
 }
 
+
 function resetTimer() {
   clearInterval(timer);
   isRunning = false;
@@ -43,9 +43,6 @@ function resetTimer() {
   updateDisplay();
 }
 
-
-
-const resetPomosBtn = document.getElementById('reset-pomos');
 
 function resetPomodoros() {
   pomodoros = 0;
@@ -65,7 +62,7 @@ startBtn.addEventListener('click', startTimer);
 resetBtn.addEventListener('click', resetTimer);
 themeToggle.addEventListener('click', toggleTheme);
 
-// Initialize
+
 updateDisplay();
 countEl.textContent = pomodoros;
 
