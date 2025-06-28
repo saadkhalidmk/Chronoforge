@@ -57,7 +57,7 @@ resetPomosBtn.addEventListener('click', resetPomodoros);
 
 
 function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
+  document.querySelector('body').classList.toggle('dark-mode');
 }
 
 startBtn.addEventListener('click', startTimer);
