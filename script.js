@@ -21,7 +21,7 @@ function startTimer() {
     return;
   }
   isRunning = true;
-  timer = setInterval(() => {
+  timer = setInterval(function () {
     timeLeft--;
     updateDisplay();
     if (timeLeft <= 0) {
