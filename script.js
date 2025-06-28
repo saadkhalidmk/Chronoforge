@@ -17,7 +17,9 @@ function updateDisplay() {
 }
 
 function startTimer() {
-  if (isRunning) return;
+  if (isRunning){
+    return;
+  }
   isRunning = true;
   timer = setInterval(() => {
     timeLeft--;
@@ -29,7 +31,7 @@ function startTimer() {
       localStorage.setItem('pomodoros', pomodoros);
       countEl.textContent = pomodoros;
       alert("Pomodoro complete! Time for a break. 🍅");
-      timeLeft = 5; // Reset to 25 minutes
+      timeLeft = 5; 
       updateDisplay();
     }
   }, 1000);
