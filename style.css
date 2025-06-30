@@ -7,26 +7,25 @@ body {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 70%;
   margin: 100px auto;
-  padding: 1rem;
+  padding: 15px;
   border: 2px solid #ccc;
   border-radius: 10px;
 }
 
 #timer {
-  font-size: 4rem;
-  margin: 20px 0;
+  font-size: 50px;
+  margin: 20px;
 }
 
 button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 15px;
 }
 
 .dark-mode {
   background: #121212;
   color: #f4f4f4;
 }
-
