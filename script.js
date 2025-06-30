@@ -1,37 +1,37 @@
 let timer;
-let isRunning = false;
-let timeLeft = 5;
+let isrunning = false;
+let timeleft = 25*60;
 let pomodoros = localStorage.getItem('pomodoros') || 0;
 
-const timerEl = document.getElementById('timer');
-const countEl = document.getElementById('count');
-const startBtn = document.getElementById('start');
-const resetBtn = document.getElementById('reset');
-const themeToggle = document.getElementById('theme-toggle');
-const resetPomosBtn = document.getElementById('reset-pomos');
+const timerp = document.getElementById('timer');
+const countp = document.getElementById('count');
+const startb = document.getElementById('start');
+const resetb = document.getElementById('reset');
+const theme = document.getElementById('theme-toggle');
+const resetpomob = document.getElementById('reset-pomos');
 
 function updateDisplay() {
-  let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
-  timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  let mins = Math.floor(timeleft / 60);
+  let secs = timeleft % 60;
+  timerp.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 }
 
 function startTimer() {
-  if (isRunning){
+  if (isrunning){
     return;
   }
-  isRunning = true;
+  isrunning = true;
   timer = setInterval(function () {
-    timeLeft--;
+    timeleft--;
     updateDisplay();
-    if (timeLeft <= 0) {
+    if (timeleft <= 0) {
       clearInterval(timer);
-      isRunning = false;
+      isrunning = false;
       pomodoros++;
       localStorage.setItem('pomodoros', pomodoros);
-      countEl.textContent = pomodoros;
+      countp.textContent = pomodoros;
       alert("Pomodoro complete! Time for a break. 🍅");
-      timeLeft = 5; 
+      timeleft = 25*60; 
       updateDisplay();
     }
   }, 1000);
@@ -40,8 +40,8 @@ function startTimer() {
 
 function resetTimer() {
   clearInterval(timer);
-  isRunning = false;
-  timeLeft = 5;
+  isrunning = false;
+  timeleft = 25*60;
   updateDisplay();
 }
 
@@ -49,10 +49,10 @@ function resetTimer() {
 function resetPomodoros() {
   pomodoros = 0;
   localStorage.setItem('pomodoros', pomodoros);
-  countEl.textContent = pomodoros;
+  countp.textContent = pomodoros;
 }
 
-resetPomosBtn.addEventListener('click', resetPomodoros);
+resetpomob.addEventListener('click', resetPomodoros);
 
 
 
@@ -60,11 +60,11 @@ function toggleTheme() {
   document.querySelector('body').classList.toggle('dark-mode');
 }
 
-startBtn.addEventListener('click', startTimer);
-resetBtn.addEventListener('click', resetTimer);
-themeToggle.addEventListener('click', toggleTheme);
+startb.addEventListener('click', startTimer);
+resetb.addEventListener('click', resetTimer);
+theme.addEventListener('click', toggleTheme);
 
 
 updateDisplay();
-countEl.textContent = pomodoros;
+countp.textContent = pomodoros;
 
