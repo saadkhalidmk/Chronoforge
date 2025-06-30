@@ -65,6 +65,4 @@ resetb.addEventListener('click', resetTimer);
 theme.addEventListener('click', toggleTheme);
 
 
-updateDisplay();
-countp.textContent = pomodoros;
 
